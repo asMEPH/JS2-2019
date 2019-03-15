@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { MenuComponent } from './menu/menu.component';
+import { ZegarComponent } from './zegar/zegar.component';
+import { TypewriterComponent } from './typewriter/typewriter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactComponent,
-    MenuComponent
+    MenuComponent,
+    ZegarComponent,
+    TypewriterComponent
   ],
   imports: [
     BrowserModule,
