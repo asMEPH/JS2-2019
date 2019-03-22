@@ -25,4 +25,10 @@ export class TypewriterComponent implements OnInit {
   utnijOstatnia(){
     this.napisany = this.napisany.slice(0,-1);
   }
+  naDuze() {
+    this.napisany = this.napisany.toUpperCase();
+  }
+  naMale() {
+    this.napisany = this.napisany.toLowerCase();
+  }
 }
