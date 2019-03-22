@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {until} from "selenium-webdriver";
+import elementIsSelected = until.elementIsSelected;
 
 @Component({
   selector: 'app-typewriter',
@@ -7,6 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TypewriterComponent implements OnInit {
   napisany: string;
+  capital: number = 0; //0male, 1duze, 2ciagle duze,
+
+
+
+
+
   constructor() { }
 
   ngOnInit() {
@@ -20,15 +28,24 @@ export class TypewriterComponent implements OnInit {
     this.napisany += 'b';
   }
   dodajNapis(napis: string) {
+    if (this.capital>0) {
+      napis = napis.toUpperCase();
+      if(this.capital==1){ this.capital=0;}
+    } else {
+        napis = napis.toLowerCase();
+      }
+
     this.napisany += napis;
   }
   utnijOstatnia(){
     this.napisany = this.napisany.slice(0,-1);
   }
   naDuze() {
-    this.napisany = this.napisany.toUpperCase();
+   this.capital += 1;
+   if (this.capital == 3) {
+     this.capital = 0;
+   }
   }
-  naMale() {
-    this.napisany = this.napisany.toLowerCase();
-  }
+
+
 }
