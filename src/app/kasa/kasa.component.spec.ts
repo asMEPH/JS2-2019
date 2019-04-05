@@ -10,7 +10,7 @@ describe('KasaComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ KasaComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

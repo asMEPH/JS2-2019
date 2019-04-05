@@ -1,15 +1,19 @@
-<div class="card mt-1 bg-dark">
-
+<div class="card">
   <div class="card-header bg-dark">
-    Kasa nr {{nr}}
+    Kasa {{nr}}
   </div>
-  <div class="card-body bg-dark">
+  <div class="card-body  bg-dark">
 
-   <i class="fas fa-user-clock"></i>
+    <i *ngFor="let c of clients" class="ml-1 fas fa-user-clock"></i>
 
   </div>
-  <div class="card-footer bg-dark">
-    <button class="btn btn-outline-success btn-sm mr-1" (click)="clients.push('aa')">(+)</button>
-    <button class="btn btn-outline-danger btn-sm" (click)="removeClient()">(-)</button>
+
+  <div class="card-footer  bg-dark">
+    Stan kasy: {{stanKasy}}
+    <br>
+    <button class="btn btn-outline-info" (click)="clients.push('aa')">(+)</button>
+    <button class="btn btn-outline-info ml-1" (click)="removeClient()">(-)</button>
   </div>
+
+
 </div>

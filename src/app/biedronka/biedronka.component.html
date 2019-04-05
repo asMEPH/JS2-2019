@@ -1,12 +1,16 @@
 <div class="row">
-  <div class="col-md-4">aaa</div>
-  <div class="col-md-4">bbb</div>
-
-  <div class="col-md-4">
-    <button style="width:100%" class="btn btn-info mt-2">kasy</button>
-    <app-kasa></app-kasa>
-    <app-kasa></app-kasa>
-    <app-kasa></app-kasa>
+  <div class="col-md-3">
+    aa
   </div>
+  <div class="col-md-5">
+    <app-hala (clientCheckout)=""></app-hala>
+  </div>
+  <div class="col-md-4">
+    <button class="btn btn-info mt-2" style="width: 100%">Kasy</button>
 
+    <app-kasa [nr]="'pierwsza'" [stanKasy]="10"></app-kasa>
+    <app-kasa [nr]="'druga'"></app-kasa>
+    <app-kasa [nr]="'nieczynna'"></app-kasa>
+    <app-kasa [nr]="'zapasowa'"></app-kasa>
+  </div>
 </div>
