@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Klient} from "../mode/klient";
 
 @Component({
   selector: 'app-kasa',
@@ -6,20 +7,32 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./kasa.component.less']
 })
 export class KasaComponent implements OnInit {
-  @Input() nr: string;
-  clients: string[];
-  @Input() stanKasy: number = 0;
+  @Input() nr: string;  //nazwa kasy
+  @Input() kolejka: Klient[];
+  @Input() stanKasy: number = 0;   //ustalamy, że to będzie liczba, i na początku ma być zero
 
   constructor() { }
 
   ngOnInit() {
-    this.clients = ['klient1',''];
   }
 
   removeClient() {
-    this.clients = this.clients.slice(0,-1);
-    this.stanKasy = this.stanKasy + 10;
+    if (this.kolejka.length==0) return;
+    this.kolejka.pop();
+    this.stanKasy += 10;
   }
 
-
+  addClient(aa: string) {
+    this.kolejka.push(new Klient('aa',0));
+  }
 }
+
+
+/**
+ * - dodać zmienną clients do hali, ustawić początkowo na = ['aa']
+ * - wyświetlić ikonkli klientów pod obrazkiem półki warzywnej
+ * - dodać przycisk dodawania klientów
+ * - dodać przycisk "klient kończy zakupy"
+ *
+ *
+ */

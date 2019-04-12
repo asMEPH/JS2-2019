@@ -4,14 +4,14 @@
   </div>
   <div class="card-body  bg-dark">
 
-    <i *ngFor="let c of clients" class="ml-1 fas fa-user-clock"></i>
+    <i *ngFor="let c of kolejka" class="ml-1 fas fa-user-clock"></i>
 
   </div>
 
   <div class="card-footer  bg-dark">
     Stan kasy: {{stanKasy}}
     <br>
-    <button class="btn btn-outline-info" (click)="clients.push('aa')">(+)</button>
+    <button class="btn btn-outline-info" (click)="addClient('aa')">(+)</button>
     <button class="btn btn-outline-info ml-1" (click)="removeClient()">(-)</button>
   </div>
 
