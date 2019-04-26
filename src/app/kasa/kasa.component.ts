@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Klient} from "../mode/klient";
+import {Klient} from "../model/klient";
 
 @Component({
   selector: 'app-kasa',

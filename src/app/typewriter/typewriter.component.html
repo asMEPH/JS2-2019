@@ -1,20 +1,18 @@
 <div class="card">
   <div class="card-header text-center bg-dark">Typewriter</div>
   <div class="card-body bg-dark">
-    {{napisany}}
+    Napisany tekst: {{napisany}}
   </div>
   <div class="card-footer bg-dark text-center">
-    <button class="btn btn-outline-info ml-1" (click)="dodajNapis('a')">a</button>
-    <button class="btn btn-outline-info ml-1" (click)="dodajNapis('b')">b</button>
-    <button class="btn btn-outline-info ml-1" (click)="utnijOstatnia()"> <i class="fas fa-arrow-left"></i></button>
-
-
-
-    <button class="btn btn-outline-info ml-1" style="width:60px" *ngIf="capital==0" (click)="naDuze()">
+    <button class="btn btn-outline-info ml-1" (click)="dodajNapis('a')"> a </button>
+    <button class="btn btn-outline-info ml-1" (click)="dodajNapis('b')"> b </button>
+    <button class="btn btn-outline-info ml-1" (click)="utnijOstatnia()">
+      <i class="fas fa-arrow-left"></i>  </button>
+    <button class="btn btn-outline-info ml-1" style="width: 60px" *ngIf="capital==0" (click)="naDuze()">
       <i class="fas fa-arrow-up"></i>a  </button>
-    <button class="btn btn-outline-info ml-1" style="width:60px" *ngIf="capital==1" (click)="naDuze()">
-      <i class="fas fa-arrow-down"></i>Aa  </button>
-    <button class="btn btn-info ml-1" style="width:60px" *ngIf="capital==2" (click)="naDuze()">
-      <i class="fas fa-arrow-down"></i>A  </button>
+    <button class="btn btn-outline-info ml-1" style="width: 60px" *ngIf="capital==1" (click)="naDuze()">
+      <i class="fas fa-arrow-up"></i>A  </button>
+    <button class="btn btn-info ml-1" style="width: 60px" *ngIf="capital===2" (click)="naDuze()">
+      <i class="fas fa-arrow-up"></i>A  </button>
   </div>
 </div>

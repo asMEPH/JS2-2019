@@ -1,10 +1,9 @@
 <div class="row">
   <div class="col-md-8">
-    <button class="btn btn-danger mt-2" style="width: 100%">Hala</button>
     <app-hala (clientCheckout)="moveClientToCheckout($event)"></app-hala>
   </div>
   <div class="col-md-4">
-    <button class="btn btn-warning mt-2 mb-1" style="width: 100%">Kasy</button>
+    <button class="btn btn-danger mt-2" style="width: 100%">Kasy</button>
 
     <app-kasa *ngFor="let k of kolejki; index as i" [nr]="'kasa'+i" [kolejka]="k"></app-kasa>
   </div>

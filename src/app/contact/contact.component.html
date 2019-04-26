@@ -1,32 +1,31 @@
 
 <div class="row">
   <div class="col-md-8">
-    Userzy: {{userzy}}
+    Userzy: {{usersService.userzy}}
     <ul>
-      <li *ngFor="let u of userzy"> user: {{u}}</li>
+      <li *ngFor="let u of usersService.userzy"> user: {{u}}</li>
     </ul>
+
+    <app-progress></app-progress>
+
   </div>
+
   <div class="col-md-4">
-    Prawa czesc
+
     <div class="card">
-      <div class="card-header h5 bg-dark">
+      <div class="card-header h4 bg-dark">
         Dane kontaktowe
       </div>
       <div class="card-body bg-dark">
-        Adres: {{adres}},{{houseNumber + houseNumber}} <br/> {{x}}
+        Adres: {{adres}}, {{houseNumber + houseNumber}} {{x}}
       </div>
-      <div class="card-footer bg-dark text-center">
-        <button class="btn btn-outline-warning" (click)="mojaAkcja()">Click here!</button>
+      <div class="card-footer bg-dark text-right">
+        <button class="btn btn-outline-info" (click)="mojaAkcja()"> Click me!</button>
+        <app-zegar></app-zegar>
+
       </div>
     </div>
 
 
-
-
-
-
-
-
   </div>
-
 </div>

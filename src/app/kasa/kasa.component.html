@@ -2,7 +2,7 @@
   <div class="card-header bg-dark">
     Kasa {{nr}}
   </div>
-  <div class="card-body  bg-dark">
+  <div class="card-body  bg-dark" style="height: 60px">
 
     <i *ngFor="let c of kolejka" class="ml-1 fas fa-user-clock"></i>
 
@@ -11,8 +11,8 @@
   <div class="card-footer  bg-dark">
     Stan kasy: {{stanKasy}}
     <br>
-    <button class="btn btn-outline-info" (click)="addClient('aa')">(+)</button>
-    <button class="btn btn-outline-info ml-1" (click)="removeClient()">(-)</button>
+    <button class="btn btn-outline-warning" (click)="addClient('aa')">(+)</button>
+    <button class="btn btn-outline-danger ml-1" (click)="removeClient()">(-)</button>
   </div>
 
 

@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./zegar.component.less']
 })
 export class ZegarComponent implements OnInit {
-  godzina: Date;
-
+  godzina: Date;  //podany typ zmienne - wiemy, że to będzie data
   constructor() { }
 
   ngOnInit() {
@@ -16,5 +15,4 @@ export class ZegarComponent implements OnInit {
   refreshHour() {
     this.godzina = new Date();
   }
-
 }

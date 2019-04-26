@@ -6,16 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.less']
 })
 export class HomeComponent implements OnInit {
-  godzina: Date;
-  name: string;
   constructor() { }
 
   ngOnInit() {
-    this.godzina = new Date();
   }
 
-  refreshHour() {
-    this.godzina = new Date();
-  }
 
 }

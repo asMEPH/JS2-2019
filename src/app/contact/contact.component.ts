@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UsersService} from "../users.service";
 
 @Component({
   selector: 'app-contact',
@@ -6,19 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.less']
 })
 export class ContactComponent implements OnInit {
-  adres = "Avenida de la Victioria 1, Lima, Peru";
+  adres = "Avenida de la Victoria 1, Lima, Peru";
   houseNumber = 2;
   private x = 0;
-  userzy = ['Wu Xiaoli','Nash Gordon','Aleksii Burow'];
-  constructor() { }
+
+  constructor(public usersService: UsersService) { }
 
   ngOnInit() {
-    console.log('klasa kontaktowa zostala zbudowana')
+    console.log('Klasa kontaktowa została zbudowana')
   }
 
   mojaAkcja() {
     this.x = this.x + 1;
-    console.log('akcja wykonana! ' + this.x + ' razy');
+    console.log('Akcja wykonana! Button został naciśnięty ' + this.x + ' razy');
   }
 
 }

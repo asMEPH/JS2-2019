@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {until} from "selenium-webdriver";
-import elementIsSelected = until.elementIsSelected;
 
 @Component({
   selector: 'app-typewriter',
@@ -8,11 +6,9 @@ import elementIsSelected = until.elementIsSelected;
   styleUrls: ['./typewriter.component.less']
 })
 export class TypewriterComponent implements OnInit {
+  //to są zmienne...
   napisany: string;
-  capital: number = 0; //0male, 1duze, 2ciagle duze,
-
-
-
+  capital: number = 0;  //0: małe, 1: duża, potem małe, 2: ciągle duże
 
 
   constructor() { }
@@ -24,28 +20,34 @@ export class TypewriterComponent implements OnInit {
   dodajA() {
     this.napisany += 'a';
   }
+
   dodajB() {
     this.napisany += 'b';
   }
+
   dodajNapis(napis: string) {
     if (this.capital>0) {
       napis = napis.toUpperCase();
-      if(this.capital==1){ this.capital=0;}
-    } else {
-        napis = napis.toLowerCase();
+      //trzeba dodać if .... jeśli jest 1, to ma zamienić na 0
+      if (this.capital==1) {
+        this.capital = 0;
       }
-
+    } else {
+      napis = napis.toLowerCase();
+    }
     this.napisany += napis;
   }
-  utnijOstatnia(){
+
+  utnijOstatnia() {
     this.napisany = this.napisany.slice(0,-1);
   }
-  naDuze() {
-   this.capital += 1;
-   if (this.capital == 3) {
-     this.capital = 0;
-   }
-  }
 
+  naDuze() {
+    // 0 -> 1 -> 2 -> 0
+    this.capital += 1;  //dodajemy 1 do zmiennej capital
+    if (this.capital == 3) {
+      this.capital = 0;
+    }
+  }
 
 }
