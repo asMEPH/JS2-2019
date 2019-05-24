@@ -17,6 +17,7 @@ export class DeAdminPanelComponent implements OnInit {
   subjects: DeSubject[] = [];
   private groups: DeGroup[] = [];
   username: string;
+  nuser: DeUser;
 
   constructor(private d : DataService,
               private http: HttpClient,

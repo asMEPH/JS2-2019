@@ -1,8 +1,8 @@
 
 <div class="row">
   <div class="col-md-12">
-    <button class="btn-outline-info btn" (click)="reload()">Reload</button>
-    <button class="btn-outline-info btn" (click)="wywolajLogowanieTekstu()">Zaloguj</button>
+    <button class="btn-outline-info btn mt-2 mr-2" (click)="reload()">Reload</button>
+    <button class="btn-outline-info btn mt-2 mr-2" (click)="wywolajLogowanieTekstu()">Zaloguj</button>
     {{username}}
 
 
@@ -10,7 +10,7 @@
   </div>
 
   <div class="col-md-6">
-    <div class="card">
+    <div class="card mt-2">
       <div class="card-header text-center">
         <h4>Użytkownicy</h4>
       </div>
@@ -34,7 +34,7 @@
       </div>
 
       <div class="card-footer bg-dark">
-        <button class="btn btn-outline-info" data-toggle="modal" data-target="#exampleModal">
+        <button class="btn btn-outline-info" data-toggle="modal" data-target="#addUserModal">
           Dodaj użytkownika
         </button>
       </div>
@@ -44,7 +44,7 @@
 
 
   <div class="col-md-6">
-    <div class="card">
+    <div class="card mt-2">
       <div class="card-header text-center">
         <h4>Grupy</h4>
       </div>
@@ -75,7 +75,8 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade text-dark" id="exampleModal" tabindex="-1" role="dialog">
+<!--`fade` disabled-->
+<div class="modal text-dark" id="addUserModal" tabindex="-1" role="dialog">
   <div class="modal-dialog bg-dark" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header bg-dark text-white">
@@ -85,7 +86,35 @@
         </button>
       </div>
       <div class="modal-body bg-dark">
-        <input [(ngModel)]="username">
+
+
+        <form>
+          <div class="form-group row">
+            <label for="inputImie" class="col-sm-3 col-form-label">Imię</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputImie"
+                     [(ngModel)]="nuser.firstName" placeholder="Imię">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputNazwisko" class="col-sm-3 col-form-label">Nazwisko</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputNazwisko"
+                     [(ngModel)]="nuser.lastName" placeholder="Nazwisko">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="inputWynik" class="col-sm-3 col-form-label">Grupa</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="inputWynik"
+                     [(ngModel)]="nuser.gid" placeholder="id grupy">
+            </div>
+          </div>
+        </form>
+
+
+
+        <input [(ngModel)]="username" placeholder="nazwisko">
 
         <span class="dropdown">
               <button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
@@ -112,8 +141,8 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Porzuć</button>
+        <button type="button" class="btn btn-primary">Zapisz</button>
       </div>
     </div>
   </div>
