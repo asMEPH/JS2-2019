@@ -1,21 +1,22 @@
 
 <div class="row">
   <div class="col-md-12">
-    <button class="btn-outline-info btn" (click)="reload()">Reload</button>
-    <button class="btn-outline-info btn" (click)="wywolajLogowanieTekstu()">Zaloguj</button>
+    <button class="btn-outline-warning btn" (click)="reload()">Reload</button>
+    <button class="btn-outline-success btn m-2" (click)="wywolajLogowanieTekstu()">Zaloguj</button>
     {{username}}
 
 
 
   </div>
 
-  <div class="col-md-6">
-    <div class="card">
-      <div class="card-header text-center">
-        <h4>Użytkownicy</h4>
+  <div class="col-md-6" >
+    <div class="card " style="background-color: rgba(255,255,255,0.1)">
+      <div class="card-header text-center " style="background-color: rgba(255,255,255,0.1)">
+        <h4>Użytkownicy{{loadUsers()}}</h4>
+         <span class="badge badge-secondary">akt:{{countOfActiveUsers()}}</span>
       </div>
-      <div class="card-body bg-dark">
-        <table class="table table-sm table-hover table-dark">
+      <div class="card-body " style="background-color: rgba(255,255,255,0.1)">
+        <table class="table table-sm table-hover text-light">
           <thead>
           <td>Imię</td>
           <td>Nazwisko</td>
@@ -33,8 +34,8 @@
         </table>
       </div>
 
-      <div class="card-footer bg-dark">
-        <button class="btn btn-outline-info" data-toggle="modal" data-target="#addUserModal">
+      <div class="card-footer" style="background-color: rgba(255,255,255,0.1)">
+        <button class="btn btn-outline-success" data-toggle="modal" data-target="#addUserModal">
           Dodaj użytkownika
         </button>
         <br>
@@ -46,12 +47,12 @@
 
 
   <div class="col-md-6">
-    <div class="card">
-      <div class="card-header text-center">
+    <div class="card" style="background-color: rgba(255,255,255,0.1)">
+      <div class="card-header text-center" style="background-color: rgba(255,255,255,0.1)">
         <h4>Grupy</h4>
       </div>
-      <div class="card-body bg-dark">
-        <table class="table table-sm table-hover table-dark">
+      <div class="card-body" style="background-color: rgba(255,255,255,0.1)">
+        <table class="table table-sm table-hover text-light"  >
           <thead>
           <td>Id</td>
           <td>Nazwa</td>
@@ -67,8 +68,8 @@
         </table>
       </div>
 
-      <div class="card-footer bg-dark">
-        <button class="btn btn-outline-info" data-toggle="modal" data-target="#addGroupModal">
+      <div class="card-footer" style="background-color: rgba(255,255,255,0.1)">
+        <button class="btn btn-outline-success" data-toggle="modal" data-target="#addGroupModal">
           Dodaj grupę
         </button>
       </div>

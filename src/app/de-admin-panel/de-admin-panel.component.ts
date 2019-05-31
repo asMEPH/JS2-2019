@@ -71,6 +71,14 @@ export class DeAdminPanelComponent implements OnInit {
         this.loadUsers();
       })
   }
+   countOfActiveUsers() : number {
+    let count = 0;
+    for(let u of this.users){
+      if (u.active === true)
+        count = count +1 ;
+    }
+    return count;
+   }
 
   showUser() {
     return JSON.stringify(this.nuser)
