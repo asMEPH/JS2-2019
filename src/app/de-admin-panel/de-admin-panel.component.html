@@ -12,16 +12,19 @@
   <div class="col-md-6" >
     <div class="card " style="background-color: rgba(255,255,255,0.1)">
       <div class="card-header text-center " style="background-color: rgba(255,255,255,0.1)">
-        <h4>Użytkownicy{{loadUsers()}}</h4>
+        <h4>Użytkownicy</h4>
          <span class="badge badge-secondary">akt:{{countOfActiveUsers()}}</span>
       </div>
       <div class="card-body " style="background-color: rgba(255,255,255,0.1)">
         <table class="table table-sm table-hover text-light">
           <thead>
-          <td>Imię</td>
-          <td>Nazwisko</td>
-          <td>Grupa</td>
-          <td>Aktywny</td>
+          <tr>
+            <td>Imię</td>
+            <td>Nazwisko</td>
+            <td>Grupa</td>
+            <td>Aktywny</td>
+
+          </tr>
           </thead>
           <tbody>
           <tr *ngFor="let u of users">
@@ -72,6 +75,8 @@
         <button class="btn btn-outline-success" data-toggle="modal" data-target="#addGroupModal">
           Dodaj grupę
         </button>
+
+
       </div>
 
     </div>
@@ -109,40 +114,29 @@
                      [(ngModel)]="nuser.lastName">
             </div>
           </div>
-          <div class="form-group row text-light">
-            <label for="inputWynik" class="col-sm-3 col-form-label">Grupa</label>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="inputWynik" name="group"
-                     [(ngModel)]="nuser.gid">
-            </div>
+          <div class="form-group row text-light" style="margin-left:2px;">
+            <p>Grupa</p>
+
+            <span class="dropdown" style="margin-left: 77px;">
+              <button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown" >
+               {{groupOfEditedUsers ? groupOfEditedUsers.name : '--wybierz-'}}
+              </button>
+              <div class="dropdown-menu" >
+                <a class="dropdown-item clickable"
+                   *ngFor="let gg of groups" (click)="groupOfEditedUsers=gg">{{gg.name}}</a>
+              </div>
+            </span>
+
+
+
+
+
           </div>
         </form>
 
 
 
-        <input [(ngModel)]="username" placeholder="nazwisko">
 
-        <span class="dropdown">
-              <button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
-                Selection..
-              </button>
-              <div class="dropdown-menu">
-                <a class="dropdown-item clickable" (click)="username='Aleph'">Action א</a>
-                <a class="dropdown-item clickable" (click)="username='Bet'">Action ב</a>
-                <a class="dropdown-item clickable" (click)="username='Gimel'">Action ג</a>
-                <a class="dropdown-item clickable" (click)="username='Dalet'">Action ד</a>
-              </div>
-            </span>
-        <span class="dropdown">
-              <button class="btn btn-outline-info dropdown-toggle" data-toggle="dropdown">
-                Selection 2...
-              </button>
-              <div class="dropdown-menu" >
-                <a class="dropdown-item clickable" >Action1</a>
-                <a class="dropdown-item clickable" >Action2</a>
-                <a class="dropdown-item clickable" >Action3</a>
-              </div>
-            </span>
 
 
       </div>

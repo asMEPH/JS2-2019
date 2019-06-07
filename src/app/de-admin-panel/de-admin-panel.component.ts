@@ -18,6 +18,7 @@ export class DeAdminPanelComponent implements OnInit {
   private groups: DeGroup[] = [];
   username: string;
   nuser: DeUser;
+  groupOfEditedUsers = DeGroup;
 
   constructor(private d: DataService,
               private http: HttpClient,
@@ -25,13 +26,13 @@ export class DeAdminPanelComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadSubjects();
+    // this.loadSubjects();
     this.nuser = new DeUser();
   }
 
-  loadUsers() {
+ loadUsers() {
     this.d.getUsers()
-      .subscribe(resp => this.users = resp);
+     .subscribe(resp => this.users = resp);
   }
 
   loadSubjects() {
